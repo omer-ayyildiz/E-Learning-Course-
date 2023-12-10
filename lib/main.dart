@@ -1,4 +1,6 @@
+import 'package:e_learning_course/screens/home/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,13 +11,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.transparent,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: HomePage(),
     );
   }
 }
